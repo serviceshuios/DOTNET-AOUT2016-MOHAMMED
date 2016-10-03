@@ -1,0 +1,19 @@
+﻿@model SiteMarchand_ME.Models.Produit
+@{
+    ViewBag.Title = "Ajouter un produit";
+}
+
+<h2>Ajouter un produit</h2>
+
+<div class="form-horizontal">
+    @using (Html.BeginForm("AjouterProduit", "Produit", FormMethod.Post))
+    {
+        <span>@Html.DisplayNameFor(model => model.NomProduit) : </span><span>@Html.TextBoxFor(model => model.NomProduit, new { @class = "form-control" })</span><br />
+        <span>@Html.DisplayNameFor(model => model.Prix) : </span><span>@Html.TextBoxFor(model => model.Prix, new { @class = "form-control" })</span><br />
+        <span>@Html.DisplayNameFor(model => model.Stock) : </span><span>@Html.TextBoxFor(model => model.Stock, new { @class = "form-control" })</span><br />
+        <span>@Html.DisplayNameFor(model => model.Categorie) : </span><span>@Html.TextBoxFor(model => model.Categorie, new { @class = "form-control" })</span><br />
+        <span>@Html.DisplayNameFor(model => model.catalogue) : </span><span>@Html.DropDownList("CatalogueId")</span>
+        <button type="submit">Ajouter</button>
+    }
+</div>
+

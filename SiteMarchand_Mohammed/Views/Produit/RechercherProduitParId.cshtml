@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SiteMarchand_ME.Models.Produit>
+@{
+    ViewBag.Title = "RechercherProduitParId";
+}
+
+<h2>RechercherProduitParId</h2>
+
+<div>
+    @using (Html.BeginForm("RechercherProduitParId", "Produit", FormMethod.Post))
+    {
+        <span>@Html.DisplayNameFor(model => model.ProduitId) :</span><span>@Html.TextBox("id", new { @class = "form-control" })</span>
+        <button type="submit">Rechercher</button>
+    }
+</div>
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.NomProduit)</th>
+                <th>@Html.DisplayNameFor(model => model.Prix)</th>
+                <th>@Html.DisplayNameFor(model => model.Stock)</th>
+                <th>@Html.DisplayNameFor(model => model.Categorie)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => m.NomProduit)</td>
+                    <td>@Html.DisplayFor(modelItem => m.Prix)</td>
+                    <td>@Html.DisplayFor(modelItem => m.Stock)</td>
+                    <td>@Html.DisplayFor(modelItem => m.Categorie)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

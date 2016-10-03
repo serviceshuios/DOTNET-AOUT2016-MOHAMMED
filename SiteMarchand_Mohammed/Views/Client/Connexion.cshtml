@@ -1,0 +1,15 @@
+﻿@model SiteMarchand_ME.Models.Utilisateur
+@{
+    ViewBag.Title = "Connexion";
+}
+
+<h2>Connexion</h2>
+
+@using (Html.BeginForm("Connexion","Client",FormMethod.Post))
+{
+    
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <span>@Html.DisplayNameFor(model => model.Pseudo) :</span><span>@Html.TextBoxFor(model => model.Pseudo, new { @class = "form-control" })</span><br />
+    <span>@Html.DisplayNameFor(model => model.Password) :</span><span>@Html.PasswordFor(model => model.Password, new { @class = "form-control" })</span><br />
+    <button type="submit">Valider</button>
+}

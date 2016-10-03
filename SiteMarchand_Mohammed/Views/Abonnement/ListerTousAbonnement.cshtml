@@ -1,0 +1,27 @@
+﻿@model IEnumerable<SiteMarchand_ME.Models.Abonnement>
+@{
+    ViewBag.Title = "listerTousAbonnement";
+}
+
+<h2>listerTousAbonnement</h2>
+<span>@Html.ActionLink("Ajouter un abonnement","AjouterAbonnement")</span>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Nom)</th>
+            <th>@Html.DisplayNameFor(model => model.Prix)</th>
+            <th>@Html.DisplayNameFor(model => model.Duree)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var m in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => m.Nom)</td>
+                <td>@Html.DisplayFor(modelItem => m.Prix)</td>
+                <td>@Html.DisplayFor(modelItem => m.Duree)</td>
+                <td>@Html.ActionLink("Supprimer","SupprimerAbonnement")</td>
+            </tr>
+        }
+    </tbody>
+</table>

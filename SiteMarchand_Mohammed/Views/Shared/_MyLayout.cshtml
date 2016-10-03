@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>@ViewBag.Title - My Personal Layout</title>
+        <!--<link href="@Url.Content("~/Content/main.css")" rel="stylesheet" type="text/css" />-->
+        <meta name="viewport" content="width-device-width, initial-scale=1" />
+              @RenderSection("ExternalCSS",false)
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <nav>
+        </nav>
+        <header>
+            <!-- Début du menu 
+            <ul>
+                <li class="menu"><a href="#">Client</a>
+                    <ul class="submenu">
+                        <li><a href="~/Client/AjouterClient">Ajouter Client</a></li>
+                        <li><a href="~/Client/ModifierClient">Modifier Client</a></li>
+                        <li><a href="~/Client/Index">Lister Client</a></li>
+                        <li><a href="~/Client/TrouverClientParNom">Trouver Client Par Nom</a></li>
+                    </ul>
+                </li>
+                <li class="menu"><a href="#">Produit</a>
+                    <ul class="submenu">
+                        <li><a href="~/Produit/AjouterProduit">Ajouter Produit</a></li>
+                        <li><a href="~/Produit/ModifierProduit">Modifier Produit</a></li>
+                        <li><a href="~/Produit/ListerProduit">Lister Produit</a></li>
+                        <li><a href="~/Produit/TrouverProduitParNom">Trouver Produit Par Nom</a></li>
+                    </ul>
+                </li>
+                <li class="menu-contact"><a href="#">Contact</a></li>
+            </ul>
+            Fin du menu -->
+        </header>
+        <section>
+            @RenderBody()
+        </section>
+        <footer>
+            <p>Pied de page</p>
+        </footer>
+        @RenderSection("ExternalJS", false)
+    </body>
+</html>

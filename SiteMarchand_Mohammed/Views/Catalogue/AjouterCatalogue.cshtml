@@ -1,0 +1,15 @@
+﻿@model SiteMarchand_ME.Models.Catalogue
+@{
+    ViewBag.Title = "AjouterCatalogue";
+}
+
+<h2>Ajouter un catalogue</h2>
+
+<div class="form-horizontal">
+    @using (Html.BeginForm("AjouterCatalogue", "Catalogue", FormMethod.Post))
+    {
+        <span>@Html.DisplayNameFor(model => model.Nom) : </span><span>@Html.TextBoxFor(model => model.Nom, new { @class = "form-control" })</span><br />
+        
+        <button type="submit">Ajouter</button>
+    }
+</div>

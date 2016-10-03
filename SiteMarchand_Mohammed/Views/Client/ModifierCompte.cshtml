@@ -1,0 +1,18 @@
+﻿@model SiteMarchand_ME.Models.Client
+@{
+    ViewBag.Title = "ModifierCompte";
+}
+
+<h2>ModifierCompte</h2>
+
+<div>
+    @using (Html.BeginForm("ModifierCompte", "Client", FormMethod.Post))
+    {
+        <span>@Html.DisplayNameFor(model => model.Civilite) : </span><span>@Html.EnumDropDownListFor(model => model.Civilite, new { @class = "form-control" })</span><br />
+        <span>@Html.DisplayNameFor(model => model.Prenom) : </span><span>@Html.TextBoxFor(model => model.Prenom, new { @class = "form-control" })</span><br />
+        <span>@Html.DisplayNameFor(model => model.Nom) : </span><span>@Html.TextBoxFor(model => model.Nom, new { @class = "form-control" })</span><br />
+        <span>@Html.DisplayNameFor(model => model.DateNaissance) : </span><span>@Html.TextBoxFor(model => model.DateNaissance, new { @class = "form-control datecontrol", type = "date" })</span><br />
+        <span>@Html.DisplayNameFor(model => model.Email) : </span><span>@Html.TextBoxFor(model => model.Email, new { @class = "form-control" })</span><br />
+        <button type="submit">Mettre à jour</button>
+    }
+</div>

@@ -1,0 +1,20 @@
+﻿@model SiteMarchand_ME.Models.Produit
+@{
+    ViewBag.Title = "ModifierProduit";
+}
+
+<h2>ModifierProduit</h2>
+
+<div class="form-horizontal">
+    @using (Html.BeginForm("ModifierProduit", "Produit", FormMethod.Post))
+    {
+        @Html.HiddenFor(model => model.ProduitId)
+        <span>@Html.DisplayNameFor(model => model.NomProduit) : </span><span>@Html.TextBoxFor(model => model.NomProduit, new { @class = "form-control" })</span><br />
+        <span>@Html.DisplayNameFor(model => model.Prix) : </span><span>@Html.TextBoxFor(model => model.Prix, new { @class = "form-control" })</span><br />
+        <span>@Html.DisplayNameFor(model => model.Stock) : </span><span>@Html.TextBoxFor(model => model.Stock, new { @class = "form-control" })</span><br />
+        <span>@Html.DisplayNameFor(model => model.Categorie) : </span><span>@Html.TextBoxFor(model => model.Categorie, new { @class = "form-control" })</span><br />
+        <span>@Html.DisplayNameFor(model => model.catalogue) : </span><span>@Html.DropDownList("CatalogueId", "Catalogue")</span>
+        <button type="submit">Mettre à jour</button>
+    }
+</div>
+

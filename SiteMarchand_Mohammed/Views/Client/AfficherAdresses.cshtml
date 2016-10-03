@@ -1,0 +1,32 @@
+﻿@model IEnumerable<SiteMarchand_ME.Models.Adresse>
+@{
+    ViewBag.Title = "AfficherAdresses";
+}
+
+<h2>AfficherAdresses</h2>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.NumeroRue)</th>
+                <th>@Html.DisplayNameFor(model => model.NomRue)</th>
+                <th>@Html.DisplayNameFor(model => model.CodePostal)</th>
+                <th>@Html.DisplayNameFor(model => model.Ville)</th>
+                <th>@Html.DisplayNameFor(model => model.typeadresse)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var m in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => m.NumeroRue)</td>
+                    <td>@Html.DisplayFor(modelItem => m.NomRue)</td>
+                    <td>@Html.DisplayFor(modelItem => m.CodePostal)</td>
+                    <td>@Html.DisplayFor(modelItem => m.Ville)</td>
+                    <td>@Html.DisplayFor(modelItem => m.typeadresse)</td>
+                    <td>@Html.ActionLink("Supprimer","SupprimerAdresse")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

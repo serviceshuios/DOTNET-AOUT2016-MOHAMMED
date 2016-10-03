@@ -1,0 +1,20 @@
+﻿@model SiteMarchand_ME.Models.Administrateur
+@{
+    ViewBag.Title = "AjouterAdministrateur";
+}
+
+<h2>Ajouter un administrateur</h2>
+
+<div class="form-horizontal">
+    @using (Html.BeginForm("AjouterAdministrateur","Admin",FormMethod.Post))
+    {
+
+        <span>@Html.DisplayNameFor(model => model.Nom) : </span><span>@Html.TextBoxFor(model => model.Nom, new { @class = "form-control" })</span><span>@Html.ValidationMessageFor(model => model.Nom)</span><br />
+        <span>@Html.DisplayNameFor(model => model.Prenom) : </span><span>@Html.TextBoxFor(model => model.Prenom, new { @class = "form-control" })</span><span>@Html.ValidationMessageFor(model => model.Prenom)</span><br />
+        <span>@Html.DisplayNameFor(model => model.Email) : </span><span>@Html.TextBoxFor(model => model.Email, new { @class = "form-control" })</span><span>@Html.ValidationMessageFor(model => model.Email)</span><br />
+        <span>@Html.DisplayNameFor(model => model.Pseudo) : </span><span>@Html.TextBoxFor(model => model.Pseudo, new { @class = "form-control" })</span><span>@Html.ValidationMessageFor(model => model.Pseudo)</span><br />
+        <span>@Html.DisplayNameFor(model => model.Password) : </span><span>@Html.PasswordFor(model => model.Password, new { @class = "form-control" })</span><span>@Html.ValidationMessageFor(model => model.Password)</span><br />
+        <span>@Html.DisplayNameFor(model => model.ConfirmPassword) : </span><span>@Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control" })</span><span>@Html.ValidationMessageFor(model => model.ConfirmPassword)</span><br />
+        <button type="submit">Ajouter</button>
+    }
+</div>

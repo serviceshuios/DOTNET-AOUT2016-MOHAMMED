@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "LoggedInAdmin";
+}
+
+<h2>loggedInAdmin</h2>
+
+@if (Session["UtilisateurId"] != null)
+{
+    @Html.ActionLink("Se déconnecter", "Logout")<br />
+    @Html.ActionLink("Ajouter un catalogue","AjouterCatalogue","Catalogue")<br />
+    @Html.ActionLink("Lister les produits","ListerProduitsAdmin","Produit")<br />
+    @Html.ActionLink("Lister les abonnements","ListerTousAbonnement","Abonnement")
+    
+    
+}
